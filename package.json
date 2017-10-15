@@ -1,5 +1,33 @@
 {
+  "name": "ghost-admin-react",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "antd": "^2.13.6"
+    "antd": "^2.13.6",
+    "ayano-react": "^0.1.9",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "scripts": {
+    "start": "ayano-script start",
+    "build": "ayano-script build",
+    "publish": "ayano-script publish"
+  },
+  "mum-config": {
+    "disablePx2Rem": true
+  },
+  "ayano-config": {
+    "resourcePrefix": "https://dn-mhc.qbox.me/faw/js/",
+    "resourceDescribeFileName": "resources.json"
+  },
+  "ayano-publish-config": {
+    "type": "1",
+    "server": "",
+    "appId": "<your app id>",
+    "htmlPath": "./index.html",
+    "resourceFile": "./resources.json"
+  },
+  "devDependencies": {
+    "ayano-script": "^0.1.10"
   }
 }

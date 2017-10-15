@@ -13,27 +13,10 @@ import constants from './scripts/constants.js';
 
 // api routers define
 import apis from './scripts/apis.js';
-
-//router components
-import Home from './views/Home/Home.js';
+import routers from './routers';
 
 import './index.scss';
 
-const routers = {
-  home: {
-    path: '/',
-    component: Home,
-  },
-  a: {
-    path: '/a',
-    children: {
-      a1: {
-        path: '/:id/a1',
-        component: Home
-      }
-    }
-  }
-}
-
 const app = createApp({ reducers, routers, actions, apis, constants, auto: true, customThunk: true, prefix: "@ayano-react" });
+console.log(app)
 app.start(document.querySelector('#root'));
