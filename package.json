@@ -13,21 +13,11 @@
     "build": "ayano-script build",
     "publish": "ayano-script publish"
   },
-  "mum-config": {
-    "disablePx2Rem": true
-  },
   "ayano-config": {
-    "resourcePrefix": "https://dn-mhc.qbox.me/faw/js/",
-    "resourceDescribeFileName": "resources.json"
-  },
-  "ayano-publish-config": {
-    "type": "1",
-    "server": "",
-    "appId": "<your app id>",
-    "htmlPath": "./index.html",
-    "resourceFile": "./resources.json"
+    "disablePx2Rem": true,
+    "antd": ["antd"]
   },
   "devDependencies": {
-    "ayano-script": "^0.1.10"
+    "ayano-script": "^0.1.11"
   }
 }

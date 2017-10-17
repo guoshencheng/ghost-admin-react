@@ -1,6 +1,5 @@
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Toast, Popup } from 'antd-mobile';
 import { createApp } from 'ayano-react';
 
 //redux actions and reducers
@@ -18,5 +17,4 @@ import routers from './routers';
 import './index.scss';
 
 const app = createApp({ reducers, routers, actions, apis, constants, auto: true, customThunk: true, prefix: "@ayano-react" });
-console.log(app)
 app.start(document.querySelector('#root'));
