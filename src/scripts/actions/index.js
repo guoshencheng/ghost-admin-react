@@ -1,4 +1,5 @@
-import * as repo from './repo.js';
+import * as auth from './auth.js';
+import { routerActions } from 'react-router-redux';
 module.exports = {
-  repo
+  auth, router: routerActions
 };

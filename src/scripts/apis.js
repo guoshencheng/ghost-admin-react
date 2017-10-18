@@ -3,8 +3,11 @@ import { methods } from 'ayano-react';
 
 let apis = {
   token: {
-    method: '/ghost/api/v0.1/authentication/token',
-    method: methods.post
+    path: '/ghost/api/v0.1/authentication/token',
+    method: methods.post,
+    headers: {
+      origin: 'https://blog.maihaoche.com'
+    }
   },
   repo: {
     path: '/repos/guoshencheng/ayano',
@@ -12,6 +15,6 @@ let apis = {
   }
 }
 
-apis.host = 'https://blog.maihaoche.com';
+console.log(apis)
 
 export default apis;

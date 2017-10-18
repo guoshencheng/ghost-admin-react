@@ -1,8 +1,8 @@
 import React from 'react';
 import './Login.scss';
+import { connectApp } from 'ayano-react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
-import moment from 'moment';
 
 class Login extends React.Component {
   constructor(props, context) {
@@ -10,10 +10,11 @@ class Login extends React.Component {
   }
 
   handleSubmit(e) {
+    const { actions } = this.props;
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        actions.auth.tokenLogin(values);
       }
     });
   }
@@ -67,4 +68,4 @@ class Login extends React.Component {
 
 const LoginForm = Form.create()(Login);
 
-export default LoginForm;
+export default connectApp()(LoginForm);
