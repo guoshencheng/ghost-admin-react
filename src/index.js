@@ -24,6 +24,11 @@ const app = createApp({ reducers, routers, actions, apis, constants, auto: true,
             message: e.message
           })
         })
+      } else {
+        notification.error({
+          title: '发生错误',
+          message: error.message
+        })
       }
     },
     handleResponse: (response) => {
