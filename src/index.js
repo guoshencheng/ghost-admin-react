@@ -15,10 +15,16 @@ import './index.scss';
 const app = createApp({ reducers, routers, actions, apis, constants, auto: true, customThunk: true, prefix: "@ayano-react",
   hooks: {
     onRequestError: (error) => {
-      notification.error({
-        title: '发生错误',
-        message: error.message
-      })
+      if (error.response) {
+        const { data = {} } = error.response;
+        const { errors } = data;
+        errors.forEach(e => {
+          notification.error({
+            title: '发生错误',
+            message: e.message
+          })
+        })
+      }
     },
     handleResponse: (response) => {
       return response.data;
