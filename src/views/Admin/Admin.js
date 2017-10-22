@@ -1,27 +1,48 @@
 import React from 'react';
 import { connectApp } from 'ayano-react';
 import { Layout, Menu, Icon } from 'antd';
+import { Switch, Route } from 'react-router-dom';
 const { Sider, Content } = Layout;
 import './Admin.scss';
+import Posts from '../Posts/Posts.js';
+
+const content = (parent) => {
+  return (
+  <Switch>
+    <Route path={ `${parent}/posts` } component={ Posts } ></Route>
+  </Switch>
+  )
+}
 
 class Admin extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
 
+  componentDidMount() {
+    const { actions } = this.props;
+    actions.post.posts();
+  }
+
+  onSelectMenu({ key }) {
+    const { actions, match } = this.props;
+    actions.router.replace(`${match.path}${key}`)
+  }
+
   render() {
+    const { match } = this.props;
     return (
       <div className="admin-container">
         <Layout>
           <Sider breakpoint="xs">
-            <div className="logo-icon custom-menu"></div>
+            <div className=" custom-menu logo-icon"></div>
             <span className="navi-title custom-menu">功能</span>
-            <Menu>
-              <Menu.Item>
+            <Menu onSelect={ this.onSelectMenu.bind(this) }>
+              <Menu.Item key="/post/create">
                 <Icon type="edit"></Icon>
                 <span className="nav-text">新建博文</span>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="/posts">
                 <Icon type="file-text"></Icon>
                 <span className="nav-text">博文列表</span>
               </Menu.Item>
@@ -38,11 +59,13 @@ class Admin extends React.Component {
               </Menu.Item>
             </Menu>
           </Sider>
-          <Content>content</Content>
+          <Content>
+            { content(match.path) }
+          </Content>
         </Layout>
       </div>
     )
   }
 }
 
-export default Admin;
+export default connectApp()(Admin);

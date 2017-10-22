@@ -1,0 +1,17 @@
+.posts-container {
+  height: 100%;
+  background: white;
+  position: relative;
+  .top-bar {
+    background: white;
+    overflow: hidden;
+    padding: 5px 20px;
+    .blogs-title {
+      height: 28px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  .posts-list {
+  }
+}

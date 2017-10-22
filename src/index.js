@@ -12,12 +12,19 @@ import routers from './routers';
 
 import './index.scss';
 
+const authError = (errors = []) => {
+  return errors.filter(e => e.errorType == 'UnauthorizedError').length > 0;
+}
+
 const app = createApp({ reducers, routers, actions, apis, constants, auto: true, customThunk: true, prefix: "@ayano-react",
   hooks: {
     onRequestError: (error) => {
       if (error.response) {
         const { data = {} } = error.response;
         const { errors } = data;
+        if (authError(errors)) {
+          app._actions.router.replace('/login')
+        }
         errors.forEach(e => {
           notification.error({
             title: '发生错误',
