@@ -19,8 +19,8 @@ class Posts extends React.Component {
             <Button type="primary">新建博文</Button>
           </Col>
         </Row>
-        <Row>
-          <Col sm={ 12 } xs={ 24 } >
+        <Row className="post-list-container">
+          <Col sm={ 18 } xs={ 24 } >
             <div className="posts-list">
               {
                 posts.map(post => {

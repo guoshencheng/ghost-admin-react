@@ -12,6 +12,14 @@
       line-height: 28px;
     }
   }
+  .post-list-container {
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+  }
   .posts-list {
     .post-item {
       padding: 10px 30px;

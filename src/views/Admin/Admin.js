@@ -33,7 +33,7 @@ class Admin extends React.Component {
     const { match } = this.props;
     return (
       <div className="admin-container">
-        <Layout>
+        <Layout className="full-height" >
           <Sider breakpoint="xs">
             <div className=" custom-menu logo-icon"></div>
             <span className="navi-title custom-menu">功能</span>

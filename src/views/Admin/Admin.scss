@@ -1,6 +1,11 @@
 @import '../../define.scss';
 
 .admin-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
   .ant-layout-sider {
     background: white;
   }
@@ -21,7 +26,8 @@
   }
   .ant-layout-sider-collapsed {
     .custom-menu {
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
     }
   }
