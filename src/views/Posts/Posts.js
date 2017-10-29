@@ -27,10 +27,10 @@ class Posts extends React.Component {
                   return (
                     <div key={ post.id } className="post-item">
                       <Row>
-                        <Col span={24}>{ post.title }</Col>
+                        <Col className="post-item-title" span={24}>{ post.title }</Col>
                       </Row>
                       <Row>
-                        <Col span={12}>{ post.status == "published" ? `发布于${moment(post.published_at).format('YYYY-MM-DD mm:ss')}` : "草稿" }</Col>
+                        <Col className="post-item-info grey-text" span={24}>{ post.status == "published" ? `发布于${moment(post.published_at).format('YYYY-MM-DD mm:ss')}` : "草稿" }</Col>
                       </Row>
                     </div>
                   )
