@@ -16,6 +16,13 @@ let apis = {
     headers: () => ({
       authorization: get('auth') && `${get('auth').token_type} ${get('auth').access_token}`
     })
+  },
+  users: {
+    path: 'ghost/api/v0.1/users',
+    method: methods.get,
+    headers: () => ({
+      authorization: get('auth') && `${get('auth').token_type} ${get('auth').access_token}`
+    })
   }
 }
 

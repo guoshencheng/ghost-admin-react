@@ -17,6 +17,9 @@ const content = (parent) => {
 class Admin extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      selectedKey: ""
+    }
   }
 
   componentDidMount() {
@@ -27,9 +30,13 @@ class Admin extends React.Component {
   onSelectMenu({ key }) {
     const { actions, match } = this.props;
     actions.router.replace(`${match.path}${key}`)
+    this.setState({
+      selectedKey: key
+    })
   }
 
   render() {
+    const { selectedKey } = this.state;
     const { match } = this.props;
     return (
       <div className="admin-container">
@@ -37,7 +44,7 @@ class Admin extends React.Component {
           <Sider breakpoint="xs">
             <div className=" custom-menu logo-icon"></div>
             <span className="navi-title custom-menu">功能</span>
-            <Menu onSelect={ this.onSelectMenu.bind(this) }>
+            <Menu onSelect={ this.onSelectMenu.bind(this) } selectedKeys={ [ selectedKey ] } >
               <Menu.Item key="/post/create">
                 <Icon type="edit"></Icon>
                 <span className="nav-text">新建博文</span>
@@ -46,14 +53,14 @@ class Admin extends React.Component {
                 <Icon type="file-text"></Icon>
                 <span className="nav-text">博文列表</span>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="/users">
                 <Icon type="team"></Icon>
                 <span className="nav-text">用户管理</span>
               </Menu.Item>
             </Menu>
             <span className="navi-title custom-menu">设置</span>
-            <Menu>
-              <Menu.Item>
+            <Menu selectedKeys={ [ selectedKey ] } onSelect={ this.onSelectMenu.bind(this) } >
+              <Menu.Item key="/settings">
                 <Icon type="setting"></Icon>
                 <span className="nav-text">全局设置</span>
               </Menu.Item>
