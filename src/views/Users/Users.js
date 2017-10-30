@@ -7,6 +7,10 @@ class Users extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
+  componentDidMount() {
+    const { actions } = this.props;
+    actions.users.invitedUsers();
+  }
   render() {
     return (
       <div className="user-list">
