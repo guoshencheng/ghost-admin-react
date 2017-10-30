@@ -5,11 +5,13 @@ import { Switch, Route } from 'react-router-dom';
 const { Sider, Content } = Layout;
 import './Admin.scss';
 import Posts from '../Posts/Posts.js';
+import Users from '../Users/Users.js';
 
 const content = (parent) => {
   return (
   <Switch>
     <Route path={ `${parent}/posts` } component={ Posts } ></Route>
+    <Route path={ `${parent}/users` } component={ Users } ></Route>
   </Switch>
   )
 }
