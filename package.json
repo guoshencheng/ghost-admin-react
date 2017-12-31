@@ -2,25 +2,9 @@
   "name": "ghost-admin-react",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "antd": "^2.13.6",
-    "ayano-react": "^0.1.10",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
   "scripts": {
     "start": "ayano-script start",
-    "build": "ayano-script build",
-    "publish": "ayano-script publish"
-  },
-  "ayano-config": {
-    "disablePx2Rem": true,
-    "antd": [
-      "antd"
-    ]
-  },
-  "devDependencies": {
-    "ayano-script": "^0.1.11"
+    "build": "ayano-script build"
   },
   "proxy": {
     "/ghost/api": {
