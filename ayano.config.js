@@ -2,9 +2,9 @@ var packageJson = require('./package.json');
 var ghostConfig = require('./ghost.config');
 
 module.exports = {
-  defineValue: {
+  defineValue: JSON.stringify({
     ghost: ghostConfig
-  },
+  }),
   resourcePrefix: `https://cdn.xxx.xxx/assets/${packageJson.name}/`,
   upload: {
     qiniu: {

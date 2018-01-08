@@ -1,5 +1,5 @@
-import * as user from './user.js';
+import * as auth from './auth';
 import { routerActions } from 'react-router-redux';
 module.exports = {
-  user, router: routerActions
+  router: routerActions, auth
 };

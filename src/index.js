@@ -10,6 +10,7 @@ import reducer from './scripts/reducer';
 import * as actions from './scripts/actions';
 import request from './scripts/request.js';
 import './index.less';
+console.log(DEFINE_VALUE)
 
 var app = createApp({ reducer, actions, request, router })
 
