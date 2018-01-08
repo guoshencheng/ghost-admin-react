@@ -3,7 +3,7 @@
     "react-hot-loader/babel",
     [
       "import",
-      { "style": "css", "libraryName": "antd-mobile" }
+      { "style": "css", "libraryName": "antd" }
     ],
   ],
   "presets": ["es2015", "react"]
