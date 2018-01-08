@@ -1,9 +1,5 @@
 module.exports = ({ file, options, env }) => ({
   plugins: {
-    'postcss-pxtorem': {
-      rootValue: 100,
-      propWhiteList: [],
-    },
     'autoprefixer': {
       browsers: [
         '>1%',
