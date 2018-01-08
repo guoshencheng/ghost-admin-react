@@ -6,7 +6,11 @@ let apis = {
     path: (data) => `/users/${data.id}`,
     searchParamsBuilder: () => null,
     method: methods.get
-  }
+  },
+  login: {
+    path: '/authentication/token',
+    method: methods.post
+  },
 }
 
 var request = new Request({
